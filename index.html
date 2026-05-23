@@ -6,36 +6,24 @@
   <title>OFCode Dev | Omer Faruk Bayrak</title>
   <meta
     name="description"
-    content="OFCode Dev is the developer profile of Omer Faruk Bayrak, focused on practical web tools, mobile apps, IT operations, and cybersecurity-oriented software projects."
+    content="Omer Faruk Bayrak. Independent developer building practical web tools, mobile apps, and thoughtful software."
   />
 
   <style>
     :root {
-      color-scheme: dark;
-
-      --bg: #050914;
-      --bg-soft: #081120;
-      --surface: rgba(255, 255, 255, 0.06);
-      --surface-strong: rgba(255, 255, 255, 0.1);
-      --surface-hover: rgba(255, 255, 255, 0.13);
-      --text: #f8fafc;
-      --text-soft: #dce8f8;
-      --muted: #9fb0c8;
-      --muted-2: #75859c;
-      --line: rgba(255, 255, 255, 0.12);
-      --line-strong: rgba(255, 255, 255, 0.2);
-      --blue: #60a5fa;
-      --cyan: #22d3ee;
-      --green: #34d399;
-      --yellow: #facc15;
-      --danger: #fb7185;
-      --shadow: 0 30px 100px rgba(0, 0, 0, 0.38);
-      --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.28);
-      --radius-xl: 34px;
-      --radius-lg: 26px;
-      --radius-md: 18px;
-      --max: 1160px;
-      --pad: clamp(18px, 4vw, 40px);
+      --bg: #f9f7f5;
+      --bg-elevated: #ffffff;
+      --text: #1a1815;
+      --text-secondary: #6b6561;
+      --text-tertiary: #a89f95;
+      --border: #e8e3dd;
+      --accent: #a89968;
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 40px;
+      --space-xl: 60px;
+      --space-xxl: 100px;
     }
 
     * {
@@ -44,43 +32,19 @@
 
     html {
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 12% 10%, rgba(96, 165, 250, 0.22), transparent 31rem),
-        radial-gradient(circle at 88% 7%, rgba(34, 211, 238, 0.16), transparent 30rem),
-        radial-gradient(circle at 48% 116%, rgba(52, 211, 153, 0.1), transparent 36rem),
-        linear-gradient(180deg, var(--bg-soft), var(--bg) 42%, #030712);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
       color: var(--text);
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      background:
-        linear-gradient(rgba(255,255,255,0.024) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: linear-gradient(to bottom, #000 0%, transparent 70%);
-      opacity: 0.55;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background: linear-gradient(to bottom, transparent, rgba(3, 7, 18, 0.55));
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
     }
 
     a {
@@ -88,700 +52,520 @@
       text-decoration: none;
     }
 
-    a:focus-visible,
-    button:focus-visible {
-      outline: 3px solid rgba(34, 211, 238, 0.75);
-      outline-offset: 4px;
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
-    .wrap {
-      width: min(var(--max), calc(100% - 40px));
+    h1, h2, h3, h4, p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 56px);
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-md);
+    }
+
+    h2 {
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.3;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: var(--space-md);
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 500;
+      letter-spacing: -0.005em;
+      margin-bottom: var(--space-sm);
+    }
+
+    p {
+      margin-bottom: var(--space-md);
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1400px;
       margin: 0 auto;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 14px;
-      z-index: 100;
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: var(--text);
-      color: #07111f;
-      font-weight: 900;
-    }
-
-    .skip-link:focus {
-      left: 14px;
+      padding-left: var(--space-md);
+      padding-right: var(--space-md);
     }
 
     header {
       position: sticky;
       top: 0;
+      background-color: var(--bg);
+      border-bottom: 1px solid var(--border);
       z-index: 50;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(5, 9, 20, 0.72);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
     }
 
     .nav {
-      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      min-height: 64px;
+      padding: var(--space-md) 0;
     }
 
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      box-shadow: 0 16px 38px rgba(34, 211, 238, 0.23);
-      color: #03111c;
       font-size: 14px;
-      letter-spacing: -0.08em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .nav-links a {
-      padding: 10px 13px;
-      border-radius: 999px;
-      transition: background 180ms ease, color 180ms ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    main {
-      padding-bottom: 30px;
-    }
-
-    .hero {
-      padding: clamp(48px, 8vw, 92px) 0 52px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .glass {
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045));
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-xl);
-      padding: clamp(30px, 5vw, 54px);
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 80% 95%, rgba(96, 165, 250, 0.28), transparent 18rem),
-        radial-gradient(circle at 0% 0%, rgba(34, 211, 238, 0.08), transparent 20rem);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .eyebrow {
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 26px;
-      padding: 8px 12px;
-      border: 1px solid rgba(96, 165, 250, 0.34);
-      border-radius: 999px;
-      background: rgba(96, 165, 250, 0.11);
-      color: #d8ecff;
-      font-size: 13px;
-      line-height: 1;
-      font-weight: 900;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--green);
-      box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.13);
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    h1 {
-      max-width: 740px;
-      margin-bottom: 24px;
-      font-size: clamp(42px, 6.4vw, 76px);
-      line-height: 0.96;
-      letter-spacing: -0.075em;
-      font-weight: 950;
-    }
-
-    h1 span {
-      display: block;
-    }
-
-    .lead {
-      max-width: 720px;
-      margin-bottom: 0;
-      color: var(--text-soft);
-      font-size: clamp(17px, 1.7vw, 20px);
-      line-height: 1.72;
-    }
-
-    .hero-note {
-      max-width: 700px;
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .btn {
-      min-height: 48px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0 19px;
-      border: 1px solid var(--line-strong);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.075);
-      color: var(--text-soft);
-      font-size: 14px;
-      font-weight: 900;
-      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.28);
-    }
-
-    .btn.primary {
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      color: #04111d;
-      box-shadow: 0 18px 40px rgba(34, 211, 238, 0.18);
-    }
-
-    .btn.primary:hover {
-      box-shadow: 0 22px 48px rgba(34, 211, 238, 0.25);
-    }
-
-    .profile-panel {
-      border-radius: var(--radius-xl);
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .identity-card {
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.065);
-    }
-
-    .identity-card h2 {
-      margin-bottom: 10px;
-      font-size: 25px;
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-    }
-
-    .identity-card p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.68;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: auto;
-    }
-
-    .stat {
-      min-height: 124px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 18px;
-      background: rgba(255, 255, 255, 0.055);
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--text);
-      font-size: clamp(24px, 3vw, 31px);
-      line-height: 1;
-      letter-spacing: -0.065em;
-    }
-
-    .stat span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.38;
-      font-weight: 700;
-    }
-
-    .section {
-      padding: 54px 0;
-      scroll-margin-top: 96px;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 1fr);
-      align-items: end;
-      gap: 28px;
-      margin-bottom: 24px;
-    }
-
-    .section-kicker {
-      display: inline-block;
-      margin-bottom: 10px;
-      color: var(--cyan);
-      font-size: 13px;
-      font-weight: 950;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .section h2 {
-      margin-bottom: 0;
-      font-size: clamp(34px, 4.4vw, 50px);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
-      font-weight: 950;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.055);
-      box-shadow: var(--shadow-soft);
-      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(34, 211, 238, 0.32);
-      background: rgba(255, 255, 255, 0.078);
-    }
-
-    .card-inner {
-      position: relative;
-      z-index: 1;
-      padding: 26px;
-    }
-
-    .app-card {
-      min-height: 360px;
-    }
-
-    .app-card::before {
-      content: "";
-      position: absolute;
-      right: -120px;
-      bottom: -150px;
-      width: 360px;
-      height: 360px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(96, 165, 250, 0.32), transparent 64%);
-      pointer-events: none;
-    }
-
-    .app-card:nth-child(2)::before {
-      background: radial-gradient(circle, rgba(52, 211, 153, 0.22), transparent 64%);
-    }
-
-    .app-card .card-inner {
-      padding: clamp(28px, 4vw, 42px);
-    }
-
-    .card-label {
-      display: inline-flex;
-      margin-bottom: 16px;
-      padding: 7px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
-      color: #d8ecff;
-      font-size: 12px;
-      line-height: 1;
-      font-weight: 900;
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      font-size: 24px;
-      line-height: 1.08;
-      letter-spacing: -0.05em;
-      font-weight: 950;
-    }
-
-    .app-card h3 {
-      max-width: 520px;
-      font-size: clamp(34px, 4.4vw, 56px);
-      line-height: 0.94;
-      letter-spacing: -0.074em;
-    }
-
-    .card p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .app-card p {
-      max-width: 650px;
-      color: var(--text-soft);
-      font-size: 17px;
-      line-height: 1.72;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 29px;
-      padding: 0 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.072);
-      color: #e5eefb;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .link-arrow {
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 22px;
-      color: #c9e7ff;
-      font-size: 14px;
-      font-weight: 950;
-    }
-
-    .link-arrow:hover {
-      color: #ecfeff;
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
-
-    .project-card {
-      min-height: 250px;
-      display: flex;
-    }
-
-    .project-card .card-inner,
-    .skill-card .card-inner,
-    .contact-card .card-inner {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .project-card .tag-row,
-    .skill-card ul,
-    .contact-card .link-arrow {
-      margin-top: auto;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 180px minmax(0, 1fr);
-      gap: 22px;
-      align-items: start;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      background: rgba(255, 255, 255, 0.052);
-    }
-
-    .time {
-      color: #bae6fd;
-      font-size: 13px;
-      font-weight: 950;
+      font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
 
-    .timeline-item h3 {
-      margin-bottom: 8px;
-      font-size: 21px;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-    }
-
-    .timeline-item p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.68;
-    }
-
-    .skill-card {
-      min-height: 270px;
-    }
-
-    .skill-card ul {
-      display: grid;
-      gap: 10px;
-      padding: 0;
-      margin-bottom: 0;
-      list-style: none;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    .skill-card li {
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .skill-card li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.68em;
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--cyan);
-      box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.1);
-    }
-
-    .contact-card {
-      min-height: 230px;
-    }
-
-    .footer {
-      margin-top: 52px;
-      border-top: 1px solid var(--line);
-      padding: 34px 0 56px;
-      color: var(--muted);
-    }
-
-    .footer-row {
+    .nav-links {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-      flex-wrap: wrap;
+      gap: var(--space-md);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: var(--text-tertiary);
+      transition: color 200ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      padding-bottom: var(--space-xxl);
+    }
+
+    section {
+      padding: var(--space-xxl) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    /* Hero */
+    .hero {
+      padding: clamp(60px, 10vw, 140px) 0;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      margin-bottom: var(--space-lg);
+      color: var(--text);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.75;
+      margin-bottom: var(--space-lg);
+      color: var(--text-secondary);
+    }
+
+    .hero-meta {
       font-size: 14px;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+      margin-bottom: var(--space-lg);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      background-color: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: all 200ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn.primary {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn.primary:hover {
+      background-color: #9d8a5a;
+      border-color: #9d8a5a;
+    }
+
+    /* Featured Work */
+    .featured {
+      max-width: 900px;
+    }
+
+    .featured-item {
+      margin-bottom: var(--space-xxl);
+      padding-bottom: var(--space-xxl);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .featured-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .featured-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--space-md);
+    }
+
+    .featured-title {
+      font-size: 32px;
+      line-height: 1.2;
+      font-weight: 500;
+      margin-bottom: var(--space-lg);
+      color: var(--text);
+    }
+
+    .featured-description {
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: var(--space-md);
+      color: var(--text-secondary);
+    }
+
+    .featured-meta {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-lg);
+      font-size: 13px;
+      color: var(--text-tertiary);
+      font-weight: 500;
+    }
+
+    .featured-links {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .featured-links a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+      transition: opacity 200ms ease;
+    }
+
+    .featured-links a:hover {
+      opacity: 0.7;
+    }
+
+    /* Selected Projects */
+    .projects-list {
+      max-width: 720px;
+    }
+
+    .project-item {
+      padding: var(--space-lg) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-name {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: var(--space-sm);
+      color: var(--text);
+    }
+
+    .project-desc {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-sm);
+      line-height: 1.65;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 500;
+    }
+
+    .project-meta-item {
+      padding-right: var(--space-sm);
+    }
+
+    .project-meta-item:not(:last-child) {
+      border-right: 1px solid var(--border);
+    }
+
+    /* How I Think */
+    .approach {
+      max-width: 700px;
+    }
+
+    .approach-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .approach-list li {
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .approach-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* Capabilities */
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      max-width: 900px;
+    }
+
+    .capability-group {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: var(--space-lg);
+    }
+
+    .capability-group h3 {
+      margin-bottom: var(--space-md);
+      color: var(--text);
+    }
+
+    .capability-group ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .capability-group li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* Contact */
+    .contact {
+      max-width: 700px;
+    }
+
+    .contact-item {
+      margin-bottom: var(--space-xl);
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-label {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-sm);
+    }
+
+    .contact-value {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: var(--space-sm);
+    }
+
+    .contact-value a {
+      color: var(--accent);
+      transition: opacity 200ms ease;
+    }
+
+    .contact-value a:hover {
+      opacity: 0.7;
+    }
+
+    .contact-description {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: var(--space-lg) 0;
+      color: var(--text-tertiary);
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-md);
+      flex-wrap: wrap;
     }
 
     .footer-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      font-weight: 900;
+      gap: var(--space-lg);
     }
 
-    .footer a {
-      color: #c9e7ff;
+    .footer-links a {
+      color: var(--text-tertiary);
+      transition: color 200ms ease;
     }
 
-    .footer a:hover {
-      color: #ecfeff;
-      text-decoration: underline;
-      text-underline-offset: 5px;
+    .footer-links a:hover {
+      color: var(--accent);
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .grid.two,
-      .grid.three,
-      .section-head {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 48px;
+    /* Responsive */
+    @media (max-width: 768px) {
+      :root {
+        --space-xl: 40px;
+        --space-xxl: 60px;
       }
 
       .nav-links {
         display: none;
       }
 
-      .section {
-        padding: 44px 0;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .wrap {
-        width: min(100% - 24px, var(--max));
-      }
-
-      .nav {
-        min-height: 68px;
-      }
-
-      .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 14px;
-      }
-
-      .hero-card,
-      .profile-panel {
-        border-radius: 26px;
-      }
-
-      .hero-card {
-        padding: 26px;
-      }
-
       h1 {
-        font-size: clamp(38px, 12.5vw, 52px);
+        font-size: clamp(32px, 8vw, 40px);
       }
 
-      .lead,
-      .app-card p {
-        font-size: 16px;
+      h2 {
+        font-size: clamp(24px, 6vw, 32px);
       }
 
-      .actions {
-        display: grid;
+      .hero {
+        padding: 60px 0;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .capabilities {
         grid-template-columns: 1fr;
+      }
+
+      .hero-cta {
+        gap: var(--space-sm);
       }
 
       .btn {
         width: 100%;
+        text-align: center;
       }
 
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .card-inner,
-      .app-card .card-inner,
-      .timeline-item {
-        padding: 22px;
-      }
-
-      .app-card {
-        min-height: 0;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .footer-row {
-        align-items: flex-start;
+      .footer-content {
         flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding-left: var(--space-sm);
+        padding-right: var(--space-sm);
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: var(--space-md);
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      h3 {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding: 40px 0;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      .nav {
+        min-height: 56px;
+        padding: var(--space-sm) 0;
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+
+      .featured-title {
+        font-size: 24px;
+      }
+
+      .featured-links {
+        flex-direction: column;
+      }
+
+      .featured-links a {
+        display: block;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
+      * {
         transition: none !important;
       }
     }
@@ -789,340 +573,268 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
   <header>
-    <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="OFCode Dev home">
-        <span class="brand-mark">OF</span>
-        <span>OFCode Dev</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#apps">Apps</a>
-        <a href="#projects">Projects</a>
-        <a href="#background">Background</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">OFCode Dev</div>
+        <div class="nav-links">
+          <a href="#featured">Featured</a>
+          <a href="#projects">Projects</a>
+          <a href="#approach">Approach</a>
+          <a href="#capabilities">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
-        <div class="glass hero-card">
-          <div class="hero-content">
-            <div class="eyebrow">Independent developer · Student · Web tools</div>
+  <main>
+    <!-- Hero / Identity -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Omer Faruk Bayrak</h1>
+          <p class="hero-subtitle">
+            Independent developer building practical web tools, mobile apps, and thoughtful software. I focus on clarity, utility, and technical confidence.
+          </p>
+          <p class="hero-meta">
+            Current work spans browser utilities, Flutter mobile development, IT operations, and cybersecurity fundamentals. Everything I build prioritizes simplicity, reliability, and clean user experience.
+          </p>
+          <div class="hero-cta">
+            <a class="btn primary" href="https://github.com/OFCode-dev" target="_blank" rel="noopener">View on GitHub</a>
+            <a class="btn" href="mailto:omerfaruk@softalya.com">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <h1 id="hero-title">
-              <span>Practical web tools.</span>
-              <span>Clean software.</span>
-            </h1>
-
-            <p class="lead">
-              I’m Omer Faruk Bayrak, the developer behind OFCode Dev. I build small browser utilities,
-              mobile app experiments, and practical software projects focused on simplicity, reliability,
-              and clean user experience.
+    <!-- Featured Work -->
+    <section id="featured">
+      <div class="container">
+        <h2>Featured Work</h2>
+        <div class="featured">
+          <article class="featured-item">
+            <span class="featured-label">Browser Extension</span>
+            <h3 class="featured-title">Quick Screenshot Clipboard</h3>
+            <p class="featured-description">
+              A focused Chrome extension that copies the visible tab screenshot directly to your clipboard with one click. Solves a real workflow problem: faster screenshots, no intermediary apps, no bloat.
             </p>
+            <div class="featured-meta">
+              <span>JavaScript</span>
+              <span>Chrome Web Store</span>
+              <span>Productivity tool</span>
+            </div>
+            <div class="featured-links">
+              <a href="https://github.com/OFCode-dev/quick-screenshot-clipboard" target="_blank" rel="noopener">GitHub →</a>
+              <a href="https://chromewebstore.google.com" target="_blank" rel="noopener">Chrome Web Store →</a>
+            </div>
+          </article>
 
-            <p class="hero-note">
-              Current focus: HTML, CSS, JavaScript, Flutter, IT operations, cybersecurity fundamentals,
-              and useful tools that stay calm instead of getting in the way.
+          <article class="featured-item">
+            <span class="featured-label">Web Utility</span>
+            <h3 class="featured-title">Quick Web Notepad</h3>
+            <p class="featured-description">
+              A calm, distraction-free browser-based notepad for quick drafts, temporary notes, and simple text editing. Built with vanilla HTML, CSS, and JavaScript. No login, no tracking, no complexity.
             </p>
-
-            <div class="actions" aria-label="Primary actions">
-              <a class="btn primary" href="/quick-web-notepad/">Open Quick Web Notepad</a>
-              <a class="btn" href="#projects">View Projects</a>
-              <a class="btn" href="https://github.com/OFCode-Dev" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a class="btn" href="https://www.linkedin.com/in/farukbayrak22" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <div class="featured-meta">
+              <span>HTML / CSS / JavaScript</span>
+              <span>Web App</span>
+              <span>Zero dependencies</span>
             </div>
-          </div>
-        </div>
-
-        <aside class="glass profile-panel" aria-label="Profile summary">
-          <div class="identity-card">
-            <h2>Omer Faruk Bayrak</h2>
-            <p>
-              Independent developer and student building a small software portfolio around browser tools,
-              mobile apps, IT operations, cybersecurity learning, and clean product experiences.
-            </p>
-          </div>
-
-          <div class="stats" aria-label="Profile highlights">
-            <div class="stat">
-              <strong>6</strong>
-              <span>Public GitHub repositories</span>
-            </div>
-            <div class="stat">
-              <strong>1</strong>
-              <span>Mobile app in Play Store preparation</span>
-            </div>
-            <div class="stat">
-              <strong>JS</strong>
-              <span>Browser utilities and web tools</span>
-            </div>
-            <div class="stat">
-              <strong>Flutter</strong>
-              <span>Mobile app development</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="apps" aria-labelledby="apps-title">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-kicker">Products</span>
-            <h2 id="apps-title">Apps</h2>
-          </div>
-          <p>Small, focused products designed to be simple, practical, and easy to understand.</p>
-        </div>
-
-        <div class="grid two">
-          <article class="card app-card">
-            <div class="card-inner">
-              <span class="card-label">Browser utility</span>
-              <h3>Quick Web Notepad</h3>
-              <p>
-                A lightweight browser-based notepad for quick notes, temporary drafts, and simple text editing.
-                Built with HTML, CSS, and JavaScript for a calm, distraction-free writing experience.
-              </p>
-
-              <div class="tag-row" aria-label="Technologies">
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">No backend</span>
-              </div>
-
-              <a class="link-arrow" href="/quick-web-notepad/">Open app →</a>
-            </div>
-          </article>
-
-          <article class="card app-card">
-            <div class="card-inner">
-              <span class="card-label">Mobile app</span>
-              <h3>Bu mu, O mu?</h3>
-              <p>
-                A casual two-option quiz app where users make quick choices, discover a fun result profile,
-                and share the result. Built as a lightweight Flutter app with no login, no payments, no ads,
-                and no backend dependency.
-              </p>
-
-              <div class="tag-row" aria-label="Technologies">
-                <span class="tag">Flutter</span>
-                <span class="tag">Android</span>
-                <span class="tag">Entertainment</span>
-                <span class="tag">Local flow</span>
-              </div>
-
-              <a class="link-arrow" href="privacy_policy.html">Privacy Policy →</a>
+            <div class="featured-links">
+              <a href="/quick-web-notepad/" target="_blank">Open app →</a>
+              <a href="https://github.com/OFCode-dev/quick-web-notepad" target="_blank" rel="noopener">GitHub →</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-kicker">GitHub work</span>
-            <h2 id="projects-title">Projects</h2>
-          </div>
-          <p>Public work focused on practical browser tools, simple interfaces, and utility-first software.</p>
-        </div>
-
-        <div class="grid three">
-          <article class="card project-card">
-            <div class="card-inner">
-              <h3>Quick Screenshot Clipboard</h3>
-              <p>A Chrome extension for copying the visible tab screenshot directly to the clipboard.</p>
-              <div class="tag-row">
-                <span class="tag">JavaScript</span>
-                <span class="tag">Chrome Extension</span>
-                <span class="tag">Productivity</span>
-              </div>
+    <!-- Selected Projects -->
+    <section id="projects">
+      <div class="container">
+        <h2>Selected Projects</h2>
+        <div class="projects-list">
+          <article class="project-item">
+            <h3 class="project-name">Quick Screenshot Firefox</h3>
+            <p class="project-desc">One-click screenshot capture for Firefox. Visible-area focused, no frills.</p>
+            <div class="project-meta">
+              <span class="project-meta-item">JavaScript</span>
+              <span class="project-meta-item">Firefox Extension</span>
+              <a href="https://github.com/OFCode-dev/quick-screenshot-firefox" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="card-inner">
-              <h3>Quick Screenshot Firefox</h3>
-              <p>A Firefox version of the screenshot utility, focused on one-click visible-area capture.</p>
-              <div class="tag-row">
-                <span class="tag">JavaScript</span>
-                <span class="tag">Firefox Extension</span>
-                <span class="tag">Browser Tool</span>
-              </div>
+          <article class="project-item">
+            <h3 class="project-name">Would You Rather App</h3>
+            <p class="project-desc">A two-option quiz app built in Flutter. Result profiles, sharing, and local state. No backend, no ads, no tracking.</p>
+            <div class="project-meta">
+              <span class="project-meta-item">Flutter</span>
+              <span class="project-meta-item">Mobile</span>
+              <a href="https://github.com/OFCode-dev/wouldyouratherapp" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="card-inner">
-              <h3>Quick Web Notepad</h3>
-              <p>A browser-based notepad with classic, enhanced, and localized versions.</p>
-              <div class="tag-row">
-                <span class="tag">HTML</span>
-                <span class="tag">Web App</span>
-                <span class="tag">Utility</span>
-              </div>
-              <a class="link-arrow" href="/quick-web-notepad/">Visit project →</a>
+          <article class="project-item">
+            <h3 class="project-name">ZoomWheel App</h3>
+            <p class="project-desc">iOS app experiment exploring touch-based interactions and native mobile design patterns.</p>
+            <div class="project-meta">
+              <span class="project-meta-item">Swift</span>
+              <span class="project-meta-item">iOS</span>
+              <a href="https://github.com/OFCode-dev/zoomwheelapp" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-item">
+            <h3 class="project-name">OFCode Dev Portfolio</h3>
+            <p class="project-desc">This site. A quiet, editorial personal developer homepage built with focus on readability and intentional design.</p>
+            <div class="project-meta">
+              <span class="project-meta-item">HTML / CSS</span>
+              <span class="project-meta-item">GitHub Pages</span>
+              <a href="https://github.com/OFCode-dev/ofcode-dev.github.io" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="background" aria-labelledby="background-title">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-kicker">Path</span>
-            <h2 id="background-title">Background</h2>
-          </div>
-          <p>A cross-disciplinary path combining technology, operations, law, investigation, and cybersecurity learning.</p>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="time">Current focus</div>
-            <div>
-              <h3>IT operations, software development, and cybersecurity</h3>
-              <p>
-                Building practical projects while strengthening skills in help desk operations, networking,
-                security fundamentals, Splunk, log analysis, and mobile app development.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="time">Education</div>
-            <div>
-              <h3>Law, business administration, and computer programming</h3>
-              <p>
-                Academic background includes law, an MBA track in educational institution management,
-                and computer programming studies.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="time">Security path</div>
-            <div>
-              <h3>Cybersecurity and data investigation mindset</h3>
-              <p>
-                Training path includes Cisco Networking Academy, TryHackMe, BTK Academy, and Splunk courses
-                covering network defense, cyber fundamentals, SIEM basics, search, reporting, and data modeling.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="time">Foundation</div>
-            <div>
-              <h3>Investigation, discipline, and structured problem solving</h3>
-              <p>
-                Previous professional experience in law enforcement, investigation, and forensics contributes
-                to a detail-oriented approach to technical troubleshooting and security analysis.
-              </p>
-            </div>
-          </article>
+    <!-- How I Think -->
+    <section id="approach">
+      <div class="container">
+        <h2>How I Think</h2>
+        <div class="approach">
+          <p>
+            I build software with clarity as the first principle. Code should communicate intent. Interfaces should feel intentional, not accidentally complex. Users should understand what's possible without reading a manual.
+          </p>
+          <ul class="approach-list">
+            <li><strong>Clarity first.</strong> Clean code, clear interfaces, obvious UX. If something needs explanation, simplify it.</li>
+            <li><strong>Utility over novelty.</strong> Tools should solve real problems. Practicality matters more than impressiveness.</li>
+            <li><strong>Careful interfaces.</strong> Whitespace is intentional. Typography serves hierarchy. Every visual choice has purpose.</li>
+            <li><strong>Technical confidence.</strong> Learn how things actually work. Understand performance, reliability, and constraints.</li>
+            <li><strong>Small tools win.</strong> Focused scope means finished. One small well-built tool beats ten abandoned ideas.</li>
+            <li><strong>Learning by building.</strong> Reading teaches concepts. Building teaches wisdom. Real projects reveal what matters.</li>
+            <li><strong>Thoughtful execution.</strong> Details accumulate. Attention to spacing, rhythm, and polish separates good from mediocre.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="skills" aria-labelledby="skills-title">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-kicker">Capabilities</span>
-            <h2 id="skills-title">Skill areas</h2>
+    <!-- Capabilities -->
+    <section id="capabilities">
+      <div class="container">
+        <h2>Capabilities</h2>
+        <div class="capabilities">
+          <div class="capability-group">
+            <h3>Web & Frontend</h3>
+            <ul>
+              <li>HTML, CSS, JavaScript</li>
+              <li>Browser extensions</li>
+              <li>Responsive design</li>
+              <li>Web performance</li>
+              <li>GitHub Pages</li>
+            </ul>
           </div>
-          <p>A concise map of the technical areas represented across projects, training, and current work.</p>
-        </div>
 
-        <div class="grid three">
-          <article class="card skill-card">
-            <div class="card-inner">
-              <h3>Software</h3>
-              <ul>
-                <li>Flutter and Android release flow</li>
-                <li>HTML, CSS, and JavaScript</li>
-                <li>Browser extensions and small web tools</li>
-                <li>Git and GitHub Pages</li>
-              </ul>
-            </div>
-          </article>
+          <div class="capability-group">
+            <h3>Mobile Development</h3>
+            <ul>
+              <li>Flutter framework</li>
+              <li>Android development</li>
+              <li>Swift & iOS basics</li>
+              <li>App release workflows</li>
+              <li>Local state management</li>
+            </ul>
+          </div>
 
-          <article class="card skill-card">
-            <div class="card-inner">
-              <h3>IT & Networking</h3>
-              <ul>
-                <li>Help desk and NOC fundamentals</li>
-                <li>Network technology and troubleshooting</li>
-                <li>Network defense basics</li>
-                <li>System safeguards and operations</li>
-              </ul>
-            </div>
-          </article>
+          <div class="capability-group">
+            <h3>IT & Security</h3>
+            <ul>
+              <li>Networking fundamentals</li>
+              <li>Help desk operations</li>
+              <li>Cybersecurity basics</li>
+              <li>SIEM & Splunk</li>
+              <li>Log analysis</li>
+            </ul>
+          </div>
 
-          <article class="card skill-card">
-            <div class="card-inner">
-              <h3>Security & Data</h3>
-              <ul>
-                <li>Cybersecurity fundamentals</li>
-                <li>SIEM basics and Splunk search</li>
-                <li>Log analysis and reporting</li>
-                <li>Data models and dashboards</li>
-              </ul>
-            </div>
-          </article>
+          <div class="capability-group">
+            <h3>Engineering Discipline</h3>
+            <ul>
+              <li>Git & version control</li>
+              <li>Problem analysis</li>
+              <li>Documentation</li>
+              <li>Testing & validation</li>
+              <li>Attention to detail</li>
+            </ul>
+          </div>
+
+          <div class="capability-group">
+            <h3>Design & UX</h3>
+            <ul>
+              <li>Typography & hierarchy</li>
+              <li>Whitespace & rhythm</li>
+              <li>Accessibility basics</li>
+              <li>Interface design</li>
+              <li>User-centered thinking</li>
+            </ul>
+          </div>
+
+          <div class="capability-group">
+            <h3>Background & Training</h3>
+            <ul>
+              <li>Law & investigation</li>
+              <li>Structured analysis</li>
+              <li>Attention to detail</li>
+              <li>Problem solving</li>
+              <li>Continuous learning</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <span class="section-kicker">Links</span>
-            <h2 id="contact-title">Contact</h2>
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact & Links</h2>
+        <div class="contact">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:omerfaruk@softalya.com">omerfaruk@softalya.com</a>
+            </div>
+            <div class="contact-description">For professional inquiries, collaboration, or to discuss projects.</div>
           </div>
-          <p>For professional links, app information, and public project work.</p>
-        </div>
 
-        <div class="grid two">
-          <article class="card contact-card">
-            <div class="card-inner">
-              <h3>GitHub</h3>
-              <p>Public repositories, browser utilities, GitHub Pages site, and software experiments.</p>
-              <a class="link-arrow" href="https://github.com/OFCode-Dev" target="_blank" rel="noopener noreferrer">github.com/OFCode-Dev →</a>
+          <div class="contact-item">
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">
+              <a href="https://github.com/OFCode-dev" target="_blank" rel="noopener">github.com/OFCode-dev</a>
             </div>
-          </article>
+            <div class="contact-description">Public repositories, browser utilities, and software experiments.</div>
+          </div>
 
-          <article class="card contact-card">
-            <div class="card-inner">
-              <h3>LinkedIn</h3>
-              <p>Professional background, education, certifications, and current IT/cybersecurity development path.</p>
-              <a class="link-arrow" href="https://www.linkedin.com/in/farukbayrak22" target="_blank" rel="noopener noreferrer">linkedin.com/in/farukbayrak22 →</a>
+          <div class="contact-item">
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">
+              <a href="https://www.linkedin.com/in/farukbayrak22" target="_blank" rel="noopener">linkedin.com/in/farukbayrak22</a>
             </div>
-          </article>
+            <div class="contact-description">Professional background, education, and current development path.</div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap footer-row">
-      <span>© 2026 OFCode Dev. All rights reserved.</span>
-      <div class="footer-links">
-        <a href="/quick-web-notepad/">Quick Web Notepad</a>
-        <a href="privacy_policy.html">Privacy Policy</a>
-        <a href="https://github.com/OFCode-Dev" target="_blank" rel="noopener noreferrer">GitHub</a>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <span>© 2026 OFCode Dev. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="/quick-web-notepad/">Quick Web Notepad</a>
+          <a href="https://github.com/OFCode-dev" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:omerfaruk@softalya.com">Email</a>
+        </div>
       </div>
     </div>
   </footer>
