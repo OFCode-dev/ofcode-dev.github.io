@@ -1,0 +1,10 @@
+{
+  "task_id": "summarize-notes-001",
+  "owner": "ai-intern",
+  "objective": "Toplantı notlarını kısa bir Markdown özetine dönüştür.",
+  "inputs": ["data/meeting-notes.txt"],
+  "actions": ["read_text", "summarize"],
+  "artifacts": ["output/summary.md"],
+  "status": "planned",
+  "requires_human_approval": false
+}
