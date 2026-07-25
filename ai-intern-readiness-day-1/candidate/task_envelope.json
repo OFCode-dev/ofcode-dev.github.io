@@ -1,0 +1,16 @@
+{
+  "task_id": 101,
+  "objective": "   ",
+  "inputs": "data/customer-feedback.csv",
+  "actions": [
+    "read_csv",
+    "classify_feedback",
+    "send_email"
+  ],
+  "artifacts": [
+    "../private/customer-report.json",
+    "/tmp/result.txt"
+  ],
+  "status": "done",
+  "requires_human_approval": false
+}
