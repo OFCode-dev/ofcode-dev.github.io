@@ -336,6 +336,21 @@
       border-right: 1px solid var(--border);
     }
 
+    /* Screenshot → Clipboard family */
+    .family-intro {
+      max-width: 720px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: var(--space-lg);
+    }
+
+    .family-role {
+      font-weight: 400;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+
     /* How I Think */
     .approach {
       max-width: 700px;
@@ -578,6 +593,7 @@
       <nav class="nav">
         <div class="brand">OFCode Dev</div>
         <div class="nav-links">
+          <a href="#clipboard-family">Extensions</a>
           <a href="#featured">Featured</a>
           <a href="#projects">Projects</a>
           <a href="#approach">Approach</a>
@@ -608,29 +624,58 @@
       </div>
     </section>
 
+    <!-- Screenshot → Clipboard Family -->
+    <section id="clipboard-family">
+      <div class="container">
+        <h2>Screenshot → Clipboard Family</h2>
+        <p class="family-intro">
+          Three browser extensions built on one promise: <strong>one click and the image is on your clipboard.</strong> No editor, no save dialog, no download, no account, no server. Each sibling captures from a different source, and they share an icon language so you can tell them apart at a glance.
+        </p>
+        <div class="projects-list">
+          <article class="project-item">
+            <h3 class="project-name">Quick Screenshot → Clipboard <span class="family-role">— the eldest · visible tab</span></h3>
+            <p class="project-desc">Click the icon and whatever fills the tab right now becomes a PNG on your clipboard. The one that set the family's rule. It also has a twin: the same extension ported to Firefox.</p>
+            <div class="project-meta">
+              <span class="project-meta-item">Chrome &amp; Edge</span>
+              <span class="project-meta-item">Firefox twin</span>
+              <a href="https://chromewebstore.google.com/detail/quick-screenshot-%E2%86%92-clipbo/pimodklbppjmjnpmhaipihkfnbnldebh" target="_blank" rel="noopener">Chrome</a>
+              <a href="https://addons.mozilla.org/en-US/firefox/addon/quick-screenshot-clipboard/" target="_blank" rel="noopener">Firefox</a>
+              <a href="/quick-screenshot-clipboard/">Details</a>
+              <a href="https://github.com/OFCode-dev/quick-screenshot-clipboard" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-item">
+            <h3 class="project-name">Stitch Screenshot → Clipboard <span class="family-role">— the middle child · full page</span></h3>
+            <p class="project-desc">One click scrolls the whole page, stitches every section into a single tall PNG and copies it. For long articles, entire conversations and bug reports that never fit on one screen.</p>
+            <div class="project-meta">
+              <span class="project-meta-item">Chrome &amp; Edge</span>
+              <span class="project-meta-item">No host permissions</span>
+              <a href="https://chromewebstore.google.com/detail/stitch-screenshot-%E2%86%92-clipb/ldhpomojadcpocpghpdpinpmagjknfjh" target="_blank" rel="noopener">Chrome</a>
+              <a href="/stitch-screenshot-clipboard/">Details</a>
+              <a href="https://github.com/OFCode-dev/stitch-screenshot-clipboard" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-item">
+            <h3 class="project-name">Frame Screenshot → Clipboard <span class="family-role">— the youngest · video frame</span></h3>
+            <p class="project-desc">Hover any HTML5 video and the current frame is copied at the video's own resolution — only the video, never the page around it. Store listing on the way; today it loads unpacked.</p>
+            <div class="project-meta">
+              <span class="project-meta-item">Chrome &amp; Edge</span>
+              <span class="project-meta-item">Manifest V3</span>
+              <a href="/frame-screenshot-clipboard/">Details</a>
+              <a href="https://github.com/OFCode-dev/frame-screenshot-clipboard" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Featured Work -->
     <section id="featured">
       <div class="container">
         <h2>Featured Work</h2>
         <div class="featured">
-          <article class="featured-item">
-            <span class="featured-label">Browser Extension</span>
-            <h3 class="featured-title">Quick Screenshot Clipboard</h3>
-            <p class="featured-description">
-              A focused browser extension that copies the visible tab screenshot directly to your clipboard with one click. Available for Chrome and Firefox. Solves a real workflow problem: faster screenshots, no intermediary apps, no bloat.
-            </p>
-            <div class="featured-meta">
-              <span>JavaScript</span>
-              <span>Chrome & Firefox</span>
-              <span>Productivity tool</span>
-            </div>
-            <div class="featured-links">
-              <a href="https://github.com/OFCode-dev/quick-screenshot-clipboard" target="_blank" rel="noopener">GitHub →</a>
-              <a href="https://chromewebstore.google.com/detail/quick-screenshot-%E2%86%92-clipbo/pimodklbppjmjnpmhaipihkfnbnldebh" target="_blank" rel="noopener">Chrome →</a>
-              <a href="https://addons.mozilla.org/en-US/firefox/addon/quick-screenshot-clipboard/" target="_blank" rel="noopener">Firefox →</a>
-            </div>
-          </article>
-
           <article class="featured-item">
             <span class="featured-label">Web Utility</span>
             <h3 class="featured-title">Quick Web Notepad</h3>
@@ -656,16 +701,6 @@
       <div class="container">
         <h2>Selected Projects</h2>
         <div class="projects-list">
-          <article class="project-item">
-            <h3 class="project-name">Quick Screenshot Firefox</h3>
-            <p class="project-desc">One-click screenshot capture for Firefox. Visible-area focused, no frills.</p>
-            <div class="project-meta">
-              <span class="project-meta-item">JavaScript</span>
-              <span class="project-meta-item">Firefox Extension</span>
-              <a href="https://github.com/OFCode-dev/quick-screenshot-firefox" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
-
           <article class="project-item">
             <h3 class="project-name">Would You Rather App</h3>
             <p class="project-desc">A two-option quiz app built in Flutter. Result profiles, sharing, and local state. No backend, no ads, no tracking.</p>
