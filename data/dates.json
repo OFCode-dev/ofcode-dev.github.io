@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "updated": "2026-07-12",
+  "events": [
+    {
+      "id": "raghaib",
+      "name_en": "Raghaib Night",
+      "hijri_day": 5,
+      "hijri_month_short": "Raj",
+      "hijri_year": 1447,
+      "gregorian_date": "2025-12-25",
+      "duration_days": 1
+    },
+    {
+      "id": "isra_miraj",
+      "name_en": "Isra and Mi'raj",
+      "hijri_day": 26,
+      "hijri_month_short": "Raj",
+      "hijri_year": 1447,
+      "gregorian_date": "2026-01-15",
+      "duration_days": 1
+    },
+    {
+      "id": "mid_shaban",
+      "name_en": "Mid-Sha'ban",
+      "hijri_day": 14,
+      "hijri_month_short": "Sha",
+      "hijri_year": 1447,
+      "gregorian_date": "2026-02-02",
+      "duration_days": 1
+    },
+    {
+      "id": "ramadan_start",
+      "name_en": "Ramadan Sharif",
+      "hijri_day": 1,
+      "hijri_month_short": "Ram",
+      "hijri_year": 1447,
+      "gregorian_date": "2026-02-19",
+      "duration_days": 1
+    },
+    {
+      "id": "laylat_al_qadr",
+      "name_en": "Laylat al-Qadr",
+      "hijri_day": 26,
+      "hijri_month_short": "Ram",
+      "hijri_year": 1447,
+      "gregorian_date": "2026-03-16",
+      "duration_days": 1
+    },
+    {
+      "id": "eid_fitr",
+      "name_en": "Eid al-Fitr",
+      "hijri_day": 1,
+      "hijri_month_short": "Shw",
+      "hijri_year": 1447,
+      "gregorian_date": "2026-03-20",
+      "duration_days": 3
+    },
+    {
+      "id": "day_of_arafah",
+      "name_en": "Day of Arafah",
+      "hijri_day": 9,
+      "hijri_month_short": "DhH",
+      "hijri_year": 1447,
+      "gregorian_date": "2026-05-26",
+      "duration_days": 1
+    },
+    {
+      "id": "eid_adha",
+      "name_en": "Eid al-Adha",
+      "hijri_day": 10,
+      "hijri_month_short": "DhH",
+      "hijri_year": 1447,
+      "gregorian_date": "2026-05-27",
+      "duration_days": 4
+    },
+    {
+      "id": "islamic_new_year",
+      "name_en": "Islamic New Year",
+      "hijri_day": 1,
+      "hijri_month_short": "Muh",
+      "hijri_year": 1448,
+      "gregorian_date": "2026-06-16",
+      "duration_days": 1
+    },
+    {
+      "id": "ashura",
+      "name_en": "Day of Ashura",
+      "hijri_day": 10,
+      "hijri_month_short": "Muh",
+      "hijri_year": 1448,
+      "gregorian_date": "2026-06-25",
+      "duration_days": 1
+    },
+    {
+      "id": "mawlid",
+      "name_en": "Mawlid al-Nabi",
+      "hijri_day": 11,
+      "hijri_month_short": "Rab",
+      "hijri_year": 1448,
+      "gregorian_date": "2026-08-24",
+      "duration_days": 1
+    },
+    {
+      "id": "raghaib",
+      "name_en": "Raghaib Night",
+      "hijri_day": 1,
+      "hijri_month_short": "Raj",
+      "hijri_year": 1448,
+      "gregorian_date": "2026-12-10",
+      "duration_days": 1
+    },
+    {
+      "id": "isra_miraj",
+      "name_en": "Isra and Mi'raj",
+      "hijri_day": 26,
+      "hijri_month_short": "Raj",
+      "hijri_year": 1448,
+      "gregorian_date": "2027-01-04",
+      "duration_days": 1
+    },
+    {
+      "id": "mid_shaban",
+      "name_en": "Mid-Sha'ban",
+      "hijri_day": 14,
+      "hijri_month_short": "Sha",
+      "hijri_year": 1448,
+      "gregorian_date": "2027-01-22",
+      "duration_days": 1
+    },
+    {
+      "id": "ramadan_start",
+      "name_en": "Ramadan Sharif",
+      "hijri_day": 1,
+      "hijri_month_short": "Ram",
+      "hijri_year": 1448,
+      "gregorian_date": "2027-02-08",
+      "duration_days": 1
+    },
+    {
+      "id": "laylat_al_qadr",
+      "name_en": "Laylat al-Qadr",
+      "hijri_day": 26,
+      "hijri_month_short": "Ram",
+      "hijri_year": 1448,
+      "gregorian_date": "2027-03-05",
+      "duration_days": 1
+    },
+    {
+      "id": "eid_fitr",
+      "name_en": "Eid al-Fitr",
+      "hijri_day": 1,
+      "hijri_month_short": "Shw",
+      "hijri_year": 1448,
+      "gregorian_date": "2027-03-09",
+      "duration_days": 3
+    },
+    {
+      "id": "day_of_arafah",
+      "name_en": "Day of Arafah",
+      "hijri_day": 9,
+      "hijri_month_short": "DhH",
+      "hijri_year": 1448,
+      "gregorian_date": "2027-05-15",
+      "duration_days": 1
+    },
+    {
+      "id": "eid_adha",
+      "name_en": "Eid al-Adha",
+      "hijri_day": 10,
+      "hijri_month_short": "DhH",
+      "hijri_year": 1448,
+      "gregorian_date": "2027-05-16",
+      "duration_days": 4
+    },
+    {
+      "id": "islamic_new_year",
+      "name_en": "Islamic New Year",
+      "hijri_day": 1,
+      "hijri_month_short": "Muh",
+      "hijri_year": 1449,
+      "gregorian_date": "2027-06-06",
+      "duration_days": 1
+    },
+    {
+      "id": "ashura",
+      "name_en": "Day of Ashura",
+      "hijri_day": 10,
+      "hijri_month_short": "Muh",
+      "hijri_year": 1449,
+      "gregorian_date": "2027-06-15",
+      "duration_days": 1
+    },
+    {
+      "id": "mawlid",
+      "name_en": "Mawlid al-Nabi",
+      "hijri_day": 11,
+      "hijri_month_short": "Rab",
+      "hijri_year": 1449,
+      "gregorian_date": "2027-08-13",
+      "duration_days": 1
+    },
+    {
+      "id": "raghaib",
+      "name_en": "Raghaib Night",
+      "hijri_day": 5,
+      "hijri_month_short": "Raj",
+      "hijri_year": 1449,
+      "gregorian_date": "2027-12-02",
+      "duration_days": 1
+    },
+    {
+      "id": "isra_miraj",
+      "name_en": "Isra and Mi'raj",
+      "hijri_day": 26,
+      "hijri_month_short": "Raj",
+      "hijri_year": 1449,
+      "gregorian_date": "2027-12-24",
+      "duration_days": 1
+    }
+  ]
+}
