@@ -1,4 +1,4 @@
-# MEMORY.md — ofcode-dev.github.io
+# MEMORY.md — ofcodedev.me
 
 Project facts and state. Update when structure or decisions change; don't log routine edits.
 

@@ -1,4 +1,4 @@
-# SOUL.md — ofcode-dev.github.io
+# SOUL.md — ofcodedev.me
 
 Identity, purpose, and voice. Read this before making design or content decisions on the site.
 
